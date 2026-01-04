@@ -1,0 +1,190 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* =========================
+   BODY – DARK, DEEP, SEXY
+========================= */
+body {
+  background:
+    radial-gradient(circle at top left, rgba(255, 60, 60, 0.22), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(140, 90, 255, 0.22), transparent 40%),
+    linear-gradient(135deg, #15141f, #0e0f18);
+  color: #e6e6f0;
+}
+
+/* =========================
+   PAGE BY PAGE SECTIONS
+========================= */
+header,
+section {
+  min-height: 100vh;
+  padding: 90px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
+
+/* =========================
+   GLASS CONTAINER
+========================= */
+header,
+section {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  animation: fadeUp 1s ease both;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h1 {
+  font-size: 3rem;
+  background: linear-gradient(90deg, #ff4d4d, #ff8a8a, #7f5cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #ffffff;
+}
+
+h3 {
+  font-size: 1.3rem;
+  color: #ffffff;
+}
+
+/* =========================
+   TEXT
+========================= */
+p {
+  max-width: 720px;
+  text-align: center;
+  line-height: 1.8;
+  color: #d2d4e6;
+}
+
+/* =========================
+   BUTTONS – BEAST MODE
+========================= */
+a {
+  text-decoration: none;
+}
+
+a,
+button {
+  padding: 14px 28px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ff3c3c, #7f5cff);
+  color: #0e0f18;
+  font-weight: 600;
+  transition: all 0.4s ease;
+  box-shadow:
+    0 0 20px rgba(255, 60, 60, 0.6),
+    0 0 40px rgba(127, 92, 255, 0.4);
+}
+
+a:hover,
+button:hover {
+  transform: translateY(-6px) scale(1.06);
+  box-shadow:
+    0 0 40px rgba(255, 60, 60, 1),
+    0 0 80px rgba(127, 92, 255, 0.8);
+}
+
+/* =========================
+   PROJECT CARDS
+========================= */
+.projects {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.project-card {
+  padding: 28px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.45s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 60, 60, 0.35),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 0 35px rgba(255, 60, 60, 0.7),
+    0 0 60px rgba(127, 92, 255, 0.6);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  padding: 30px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.04);
+  color: #aaaed6;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 700px) {
+  h1 {
+    font-size: 2.3rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+}
